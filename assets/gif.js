@@ -37,10 +37,13 @@ function displayAthletes() {
         console.log(response);
         var athDiv = $("<div class='athl'>");
 
-        var rating = response.ratings;
+        var rating = response.data.images.ratings;
         var p = $("<p>").text("Rating: " + rating);
         
         athDiv.append(p);
+        var imgUrl = response.data.images.url;
+        var image = $("<img>").attr("src", imgUrl);
+        athDiv.append(image);
 
     });
 }
